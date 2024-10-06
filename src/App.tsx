@@ -2,12 +2,12 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, useMotionValue, useTransform, MotionValue } from 'framer-motion';
 import canOrange from './assets/can-orange.png';
 import orange1 from './assets/orange1.png';
-import pineapple1 from './assets/pineapple1.png';
+import pineapple2 from './assets/pineapple2.png';
 import canPineapple from './assets/can-pineapple.png';
 import leafImage from './assets/leaf.png';
 import orangeSlice from './assets/orange2.png';
 import pineappleSlice from './assets/pineapple3.png'; 
-import pineapple from './assets/pineapple2.png'; 
+import pineapple1 from './assets/pineapple1.png'; 
 
 type Flavor = 'orange' | 'pineapple';
 
@@ -36,7 +36,7 @@ const flavors: Flavors = {
     color: '#E4FFC0',
     textColor: '#B7EC73',
     can: canPineapple,
-    slice: pineapple,
+    slice: pineapple1,
   },
 };
 
@@ -188,7 +188,7 @@ export default function TarragonHero() {
       {/* Leaf Image */}
       <div className="relative top-1/3 left-1/2">
         <AnimatedImage
-            src={currentFlavor === 'pineapple' ? pineapple1 : leafImage} 
+            src={currentFlavor === 'pineapple' ? pineapple2 : leafImage} 
           alt="Leaf"
           width={100}
           height={100}
