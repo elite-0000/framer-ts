@@ -1,3 +1,5 @@
+// AnimatedImage.tsx
+import React from 'react';
 import { motion, MotionValue } from 'framer-motion';
 
 interface AnimationProps {
