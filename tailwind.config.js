@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  mode: 'jit', 
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
@@ -14,6 +15,10 @@ export default {
         '11xl': '12rem',
         '12xl': '14rem', 
         '13xl': '16rem', 
+      },
+      colors: {
+        orange: '#FFEFDA',
+        pineapple: '#E4FFC0',
       },
     },
   },

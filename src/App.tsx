@@ -1,20 +1,13 @@
-// TarragonHero.tsx
+// src/TarragonHero.tsx
+
 import React, { useState, useRef, useEffect } from 'react';
 import { useMotionValue } from 'framer-motion';
+import { motion } from 'framer-motion'; // Import motion from framer-motion
 import Header from './components/Header';
 import FlavorDisplay from './components/FlavorDetail';
 import AnimatedImagesContainer from './components/AnimatedImagesContainer';
 import SwitchFlavorButton from './components/Button';
-import {
-  canOrange,
-  canPineapple,
-  orange1,
-  orange2,
-  pineapple1,
-  pineapple2,
-  pineapple3,
-  leafImage,
-} from './assets';
+import images from './assets';
 
 // Define your types
 type Flavor = 'orange' | 'pineapple';
@@ -39,19 +32,19 @@ const flavors: Flavors = {
     name: 'Orange',
     color: '#FFEFDA',
     textColor: '#FFD399',
-    can: canOrange,
-    slice: orange1,
-    leafImage: leafImage,
-    sliceImage: orange2,
+    can: images.orange.can,
+    slice: images.orange.slices[0],
+    leafImage: images.orange.leaf,
+    sliceImage: images.orange.slices[1],
   },
   pineapple: {
     name: 'Pineapple',
     color: '#E4FFC0',
     textColor: '#B7EC73',
-    can: canPineapple,
-    slice: pineapple1,
-    leafImage: pineapple2, 
-    sliceImage: pineapple3,
+    can: images.pineapple.can,
+    slice: images.pineapple.slices[0],
+    leafImage: images.pineapple.slices[2], // you can use leaf images as well
+    sliceImage: images.pineapple.slices[1],
   },
 };
 
@@ -84,10 +77,15 @@ const App: React.FC = () => {
   }, [mouseX, mouseY]);
 
   return (
-    <div
+    <motion.div
       ref={containerRef}
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-screen overflow-hidden" 
       style={{ backgroundColor: flavors[currentFlavor].color }}
+      key={currentFlavor} // Keying by flavor for triggering re-mounting and animations
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }} // Animation on exit
+      transition={{ duration: 0.5 }} // Animation duration
     >
       <Header title="Tarragon" navItems={['Products', 'About', 'Insights']} />
 
@@ -104,7 +102,7 @@ const App: React.FC = () => {
       />
 
       <SwitchFlavorButton onClick={switchFlavor} />
-    </div>
+    </motion.div>
   );
 };
 
