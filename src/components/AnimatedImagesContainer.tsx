@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// AnimatedImagesContainer.tsx
 import React from 'react';
 import AnimatedImage from './AnimatedImage';
 import { useTransform } from 'framer-motion';

@@ -1,4 +1,3 @@
-// SwitchFlavorButton.tsx
 import React from 'react';
 
 interface SwitchFlavorButtonProps {
