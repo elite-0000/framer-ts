@@ -25,3 +25,9 @@ This template provides a minimal setup to get React working in Vite with HMR and
   ```
 
 🎨 Let your imagination run wild and add your own splash of color to this project! Happy coding! 🌟✨
+
+Inspired Figma Design --> https://www.figma.com/design/MelIhZVJeC6Y4NiLtqzgWA/Fake-3D-Rotation-(Community)?node-id=0-1&node-type=canvas&t=setBRTNlM5jYV4cD-0
+
+
+
+Video --> https://youtu.be/IcfAB7NcP2Q
